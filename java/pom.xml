@@ -14,7 +14,7 @@
 	<repositories>
 	  <repository>
 	    <releases>
-              <enabled>false</enabled>
+              <enabled>true</enabled>
               <updatePolicy>always</updatePolicy>
               <checksumPolicy>warn</checksumPolicy>
 	    </releases>
@@ -41,8 +41,14 @@
 
 		<dependency>
 			<groupId>uk.ac.cam.cl.dtg.teaching</groupId>
-			<artifactId>programming-test-java</artifactId>
+			<artifactId>pottery-container-java</artifactId>
 			<version>1.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>uk.ac.cam.cl.dtg.teaching</groupId>
+			<artifactId>pottery-container-java</artifactId>
+			<version>1.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 
