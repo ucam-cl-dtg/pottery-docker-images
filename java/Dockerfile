@@ -14,7 +14,8 @@ RUN add-apt-repository -y ppa:webupd8team/java && \
 COPY pom.xml /maven-temp/
 WORKDIR /maven-temp
 RUN mkdir /.m2
-RUN mvn -Dmaven.repo.local=/.m2/repository compile package && rm -rf /maven-temp
+RUN mvn -Dmaven.repo.local=/.m2/repository clean compile package && rm -rf /maven-temp
+RUN rm -rf /.m2/repository/uk/ac/cam/cl/dtg/teaching/programming-test-java/*SNAPSHOT
 RUN find /.m2 -type f -exec chmod 666 \{\} \;
 RUN find /.m2 -type d -exec chmod 777 \{\} \;
 WORKDIR /
