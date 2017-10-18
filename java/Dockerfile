@@ -8,7 +8,7 @@ RUN add-apt-repository -y ppa:webupd8team/java && \
     apt-get update && \
     echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
     echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections && \
-    apt-get install -y --no-install-recommends oracle-java8-installer libhyperic-sigar-java git maven xvfb ca-certificates curl && \
+    apt-get install -y --no-install-recommends oracle-java8-installer libhyperic-sigar-java git maven xvfb ca-certificates curl python && \
     rm -rf /var/lib/apt/lists/*
 
 
