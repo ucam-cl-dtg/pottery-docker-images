@@ -6,7 +6,7 @@ RUN apt-get update && \
 
 RUN add-apt-repository -y ppa:webupd8team/java && \
     apt-get update && \
-    apt-get install -y --no-install-recommends openjdk-8-jdk libhyperic-sigar-java git maven xvfb ca-certificates curl python vnc4server expect && \
+    apt-get install -y --no-install-recommends openjdk-8-jdk libhyperic-sigar-java git maven xvfb ca-certificates curl python xvfb && \
     rm -rf /var/lib/apt/lists/*
 
 COPY pom.xml /usr/local/maven-cache/pom.xml
@@ -23,8 +23,6 @@ RUN curl -o /usr/local/bin/gosu -SL "https://github.com/tianon/gosu/releases/dow
     && gpg --verify /usr/local/bin/gosu.asc \
     && rm /usr/local/bin/gosu.asc \
     && chmod +x /usr/local/bin/gosu
-
-RUN apt-get update && apt-get install -y xfonts-base
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
