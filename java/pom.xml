@@ -42,7 +42,7 @@
 		<dependency>
 			<groupId>uk.ac.cam.cl.dtg.teaching</groupId>
 			<artifactId>pottery-container-java</artifactId>
-			<version>1.0.3</version>
+			<version>1.0.5</version>
 		</dependency>
 		
 		<dependency>
