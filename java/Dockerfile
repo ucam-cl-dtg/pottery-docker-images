@@ -1,16 +1,18 @@
 FROM ubuntu:16.04
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends software-properties-common && \
+    apt-get install -y --no-install-recommends \ 
+       ca-certificates \
+       curl \
+       git \
+       libhyperic-sigar-java \
+       maven \
+       openjdk-8-jdk \
+       python \
+       software-properties-common \
+       xvfb \
+       && \
     rm -rf /var/lib/apt/lists/*
-
-RUN add-apt-repository -y ppa:webupd8team/java && \
-    apt-get update && \
-    echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
-    echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections && \
-    apt-get install -y --no-install-recommends oracle-java8-installer libhyperic-sigar-java git maven xvfb ca-certificates curl python && \
-    rm -rf /var/lib/apt/lists/*
-
 
 COPY pom.xml /usr/local/maven-cache/pom.xml
 WORKDIR /usr/local/maven-cache
